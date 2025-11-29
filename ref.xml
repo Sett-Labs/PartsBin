@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Capacitors>
+	<database>
+		<table>
+		CREATE TABLE capacitors (
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			name TEXT NOT NULL,
+			value TEXT,
+			description TEXT,
+			
+			-- Manufacturer Info
+			manufacturer_name TEXT NOT NULL,
+			manufacturer TEXT NOT NULL,
+			
+			-- Supplier SKUs
+			lcsc TEXT,		
+			mouser TEXT,
+			farnell TEXT,
+			
+			-- Electrical Specifications
+			capacitance TEXT,
+			voltage_rating TEXT,
+			tolerance TEXT,
+			dielectric TEXT,
+			esr TEXT,
+			ripple_current TEXT,
+			
+			-- Measured Characteristics
+			cap_at_3v3 TEXT,
+			cap_at_5v TEXT, 
+			cap_at_12v TEXT,
+			
+			-- Other
+			misc TEXT,
+			
+			-- Metadata
+			enriched BOOLEAN DEFAULT FALSE,
+			last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+			
+			-- Indexes for faster lookups
+			UNIQUE(manufacturer_name)
+		);
+		</table>
+		<columns>name,value,description,lcsc,manufacturer_name,manufacturer,esr,misc,tolerance,cap_at_12v,voltage_rating,dielectric,cap_at_3v3,cap_at_5v,ripple_current,mouser,cap_at_3v3,capacitance,farnell,enriched</columns>
+	</database>
+	<muRata>
+		<Datasheet>
+			<crop>1</crop>
+			<link>https://pim.murata.com/en-eu/pim/details/?partNum=(MPN)%23</link>
+		</Datasheet>
+		<Series>
+			<range from="0" to="3"/>
+			<code from="GRM" to="GRM - Chip Multilayer Ceramic Capacitors for Consumer Electronics and Industrial Equipment" />
+			<code from="GCM" to="GCM - Chip Multilayer Ceramic Capacitors for Automotive (Powertrain/Safety)" />
+            <code from="GJC" to="GJC - Soft Termination Chip Multilayer Ceramic Capacitors for Automotive (Powertrain/Safety)" />
+            <code from="GJM" to="GJM - High Q Chip Multilayer Ceramic Capacitors for Consumer Electronics and Industrial Equipment (max. 100Vdc)" />
+			<code from="GRT" to="GRT - AEC-Q200 Compliant Chip Multilayer Ceramic Capacitors for Automotive (Infortainment/Confort) and Industrial Equipment" />
+		</Series>
+		<Size>
+			<range from="3" to="5"/>
+			<code from="02" to="01005"/>
+			<code from="03" to="0201"/>
+			<code from="15" to="0402"/>
+			<code from="18" to="0603"/>
+			<code from="21" to="0805"/>
+			<code from="31" to="1206"/>
+			<code from="32" to="1210"/>
+		</Size>
+		<Height>
+			<range from="5" to="6"/>
+			<code from="1" to="0.125mm" />
+			<code from="2" to="0.2mm" />
+			<code from="3" to="0.3mm" />
+			<code from="4" to="0.4mm" />
+			<code from="5" to="0.5mm" />
+			<code from="6" to="0.6mm" />
+			<code from="7" to="0.7mm" />
+			<code from="8" to="0.8mm" />
+			<code from="9" to="0.85mm" />
+			<code from="A" to="1.0mm" />
+			<code from="B" to="1.25mm" />
+			<code from="C" to="1.6mm" />
+			<code from="D" to="2.0mm" />
+			<code from="E" to="2.5mm" />
+			<code from="K" to="0.08mm" />
+			<code from="M" to="1.15mm" />
+			<code from="Q" to="1.5mm" />
+			<code from="S" to="0.16mm" />
+			<code from="T" to="0.18mm" />
+			<code from="X" to="??" />
+			<code from="Y" to="0.135mm" />
+		</Height>
+		<Dielectric>
+			<range from="6" to="8"/>
+			<code from="5C" to="C0G"/>
+			<code from="7U" to="U2J"/>
+			<code from="C6" to="X5S"/>
+			<code from="C7" to="X7S"/>
+			<code from="C8" to="X6S"/>
+			<code from="D6" to="X5T"/>
+			<code from="D7" to="X7T"/>
+			<code from="D8" to="X6T"/>
+			<code from="E7" to="X7U"/>
+			<code from="R6" to="X5R"/>
+			<code from="R7" to="X7R"/>
+			<code from="R9" to="X8R"/>
+			<code from="W0" to="X7T"/>
+			<code from="Z7" to="X7R"/>
+		</Dielectric>
+		<Voltage>
+			<range from="8" to="10"/>			
+			<code from="0D" to="2V"/>
+			<code from="0E" to="2.5V"/>
+			<code from="EA" to="2.5V"/>
+			<code from="0G" to="4V"/> 
+			<code from="EB" to="4V"/>
+			<code from="0J" to="6.3V"/> 
+			<code from="EC" to="6.3V"/>
+			<code from="1A" to="10V"/> 
+			<code from="ED" to="10V"/>
+			<code from="1C" to="16V"/> 
+			<code from="EE" to="16V"/>
+			<code from="1E" to="25V"/> 
+			<code from="EF" to="25V"/>
+			<code from="1H" to="50V"/> 
+			<code from="EH" to="50V"/>
+			<code from="1J" to="63V"/> 
+			<code from="1K" to="80V"/>
+			<code from="2A" to="100V"/>
+			<code from="EL" to="100V"/>
+			<code from="2D" to="200V"/>
+			<code from="2E" to="250V"/>
+			<code from="2W" to="450V"/>
+			<code from="LP" to="450V"/>
+			<code from="2H" to="500V"/>
+			<code from="LU" to="500V"/>
+			<code from="2J" to="630V"/>
+			<code from="LQ" to="630V"/>
+			<code from="3A" to="1kV"/>
+			<code from="LF" to="1kV"/>
+			<code from="LW" to="1kV"/>
+			<code from="3B" to="250V"/>
+			<code from="LG" to="1.25kV"/>
+			<code from="LX" to="1.25kV"/>
+			<code from="3D" to="2kV"/>
+			<code from="3F" to="3.15kV"/>
+			<code from="BB" to="350V"/>
+			<code from="E2" to="250Vac"/>
+			<code from="YA" to="35V"/>
+			<code from="EG" to="35V"/>
+		</Voltage>
+		<Capacitance>
+			<range from="10" to="13"/>
+			<replace from="R" to="."/>
+		</Capacitance>
+		<Tolerance>
+			<range from="13" to="14"/>
+			<code from="B" to="±0.1pF"/>
+			<code from="C" to="±0.25pF"/>
+			<code from="D" to="±0.5pF (Less than 10pF) ±0.5% (10pF and over)"/>
+			<code from="F" to="±1%"/>
+			<code from="G" to="±2%"/>
+			<code from="J" to="±5%"/>
+			<code from="K" to="±10%"/>
+			<code from="M" to="±20%"/>
+			<code from="R" to="??"/>
+			<code from="W" to="±0.05pF"/>
+		</Tolerance>
+	</muRata>
+</Capacitors>
