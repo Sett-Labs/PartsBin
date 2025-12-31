@@ -933,14 +933,12 @@ public class SQLDB extends Database implements TableInsert{
         }
         return batchOk;
     }
-    public boolean doInsert( String query ){
+    public void doInsert(String query ){
         try (var ps = con.createStatement()){
             ps.executeUpdate(query);
         } catch (SQLException e) {
             Logger.error(e);
-            return false;
         }
-        return true;
     }
     public boolean doPreparedInsert( String query, String[] data ){
         return doPreparedInsert(query,data,true);

@@ -20,8 +20,6 @@ public class PartNumberWorkflow implements ClipboardOwner {
         StringSelection selection = new StringSelection(partNumberToLookUp);
         // Set content, assigning 'this' as the owner
         clipboard.setContents(selection, this);
-        System.out.println("-> Program set part number: " + partNumberToLookUp);
-        System.out.println("   Waiting for user to copy new info...");
 
         // --- 2. Program Waits ---
         while (!ownershipLost) {
@@ -30,12 +28,10 @@ public class PartNumberWorkflow implements ClipboardOwner {
                 Thread.sleep(200);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
+                System.err.println("Problem?");
                 return null;
             }
         }
-
-        System.out.println("✅ New content detected!");
-
         // --- 3. Program Reads New Info ---
         return pasteFromClipboard(clipboard);
     }
